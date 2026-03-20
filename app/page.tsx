@@ -26,7 +26,6 @@ function IconCheck() {
   );
 }
 
-// ── Placeholder component — replace with <Image> when assets are ready ────────
 function ImgPlaceholder({ label, aspectRatio = "16/9" }: { label: string; aspectRatio?: string }) {
   return (
     <div
@@ -81,11 +80,11 @@ export default function StarterPage() {
             New to LPing?
           </span>
           <h1 className="text-4xl sm:text-6xl font-bold text-white leading-[1.1] tracking-tight mb-5">
-            Your first LP position,<br />
+            Your first LP position,<br className="hidden sm:block" />
             <span className="text-[#F97316]">made simple.</span>
           </h1>
           <p className="text-lg text-white/40 max-w-sm mx-auto mb-10 leading-relaxed">
-            Set up your first liquidity position in minutes — guided, step by step.
+            Set up your first liquidity position in minutes, guided step by step.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center mb-14">
             <button className="flex items-center justify-center gap-2 bg-[#F97316] text-white text-sm font-bold px-8 py-3 rounded-lg hover:bg-[#ea6c0a] transition-colors">
@@ -95,27 +94,22 @@ export default function StarterPage() {
               How it works
             </a>
           </div>
-
-          {/* IMG: hero — terminal screenshot or product illustration */}
-          {/* Replace with: <Image src="/hero-terminal.png" width={900} height={500} alt="Meteora terminal" className="rounded-2xl border border-white/10 w-full" /> */}
           <div className="relative">
             <div className="absolute inset-0 bg-gradient-to-t from-[#0C0E12] via-transparent to-transparent z-10 rounded-2xl pointer-events-none" />
             <ImgPlaceholder label="Hero image — terminal screenshot or product illustration" aspectRatio="16/7" />
           </div>
         </div>
 
-
-
         {/* ── Basics ── */}
-        <div id="basics" className="py-4 mb-4">
+        <div id="basics" className="py-10 mb-4 border-b border-white/10">
           <p className="text-[11px] font-medium text-[#F97316]/70 uppercase tracking-widest mb-2">The basics</p>
           <h2 className="text-2xl font-bold text-white mb-8">Three things to know</h2>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
             {[
               { icon: "deposit", title: "Deposit & earn", body: "Add two tokens to a pool. Every trade earns you a fee automatically.", tag: null, tagStyle: "" },
-              { icon: "fees", title: "Fees are automatic", body: "You earn passively. Fees accumulate as trades happen — no action needed.", tag: "Passive income", tagStyle: "bg-[#F97316]/10 text-[#F97316] border-[#F97316]/20" },
-              { icon: "range", title: "Watch your range", body: "If price leaves your range, fees pause. Stay in range to keep earning.", tag: "⚠ Key risk", tagStyle: "bg-yellow-500/10 text-yellow-400 border-yellow-500/20" },
+              { icon: "fees", title: "Fees are automatic", body: "You earn passively. Fees accumulate as trades happen with no action needed.", tag: "Passive income", tagStyle: "bg-[#F97316]/10 text-[#F97316] border-[#F97316]/20" },
+              { icon: "range", title: "Watch your range", body: "If price leaves your range, fees pause. Stay in range to keep earning.", tag: "Key risk", tagStyle: "bg-yellow-500/10 text-yellow-400 border-yellow-500/20" },
             ].map((c) => (
               <div key={c.icon} className="bg-white/[0.03] border border-white/10 rounded-2xl p-6 hover:border-[#F97316]/20 transition-colors">
                 <div className="w-12 h-12 rounded-xl bg-[#F97316]/10 border border-[#F97316]/10 flex items-center justify-center mb-5">
@@ -149,17 +143,12 @@ export default function StarterPage() {
               </div>
             ))}
           </div>
-
-          {/* IMG: illustration — e.g. a range chart or LP concept graphic */}
-          {/* Replace with: <Image src="/lp-range-illustration.png" width={900} height={400} alt="LP range illustration" className="rounded-2xl w-full" /> */}
           <ImgPlaceholder label="Illustration — LP range concept or fee flow graphic" aspectRatio="16/6" />
         </div>
 
         {/* ── Guided tour ── */}
         <div className="bg-white/[0.03] border border-white/10 rounded-2xl overflow-hidden my-10">
           <div className="grid grid-cols-1 sm:grid-cols-2">
-
-            {/* Left: text + steps */}
             <div className="p-8 border-b sm:border-b-0 sm:border-r border-white/10">
               <p className="text-[11px] font-medium text-[#F97316]/70 uppercase tracking-widest mb-2">Guided setup tour</p>
               <h2 className="text-2xl font-bold text-white mb-1">We walk you through it.</h2>
@@ -178,14 +167,9 @@ export default function StarterPage() {
                 Start guided setup <IconArrow />
               </button>
             </div>
-
-            {/* Right: screenshot placeholder */}
-            {/* IMG: guided tour screenshot — what the in-terminal tour looks like */}
-            {/* Replace with: <Image src="/tour-screenshot.png" fill alt="Guided tour" className="object-cover" /> */}
             <div className="relative min-h-[280px] bg-white/[0.02] flex items-center justify-center p-6">
               <ImgPlaceholder label="Screenshot — in-terminal guided tour UI" aspectRatio="4/3" />
             </div>
-
           </div>
         </div>
 
@@ -196,7 +180,7 @@ export default function StarterPage() {
             <h2 className="text-lg font-bold text-white mb-5">Keep an eye on</h2>
             <div className="flex flex-col gap-4">
               {[
-                { dot: "bg-[#F97316]", title: "In range?", desc: "Price out of range = fees paused." },
+                { dot: "bg-[#F97316]", title: "In range?", desc: "Price out of range means fees are paused." },
                 { dot: "bg-blue-400", title: "Fees earned", desc: "Accumulates automatically." },
                 { dot: "bg-yellow-400", title: "PnL", desc: "Fees minus any value change." },
                 { dot: "bg-red-400", title: "Next move?", desc: "Hold, rebalance, or withdraw." },
@@ -242,7 +226,7 @@ export default function StarterPage() {
                 This guide covers <span className="text-white font-medium">DLMM</span>, Meteora's flagship product.
               </p>
               <p className="text-[13px] text-white/40 leading-relaxed">
-                <span className="text-white font-medium">DAMM v2</span> is also available — a more hands-off, set-and-forget pool type suited for longer time horizons. No guided setup yet, but you can get a feel for it below.
+                <span className="text-white font-medium">DAMM v2</span> is also available. A more hands-off, set-and-forget pool type suited for longer time horizons. No guided setup yet but you can get a feel for it below.
               </p>
             </div>
             <a href="#" className="shrink-0 inline-flex items-center gap-1.5 text-[12px] text-[#F97316] border border-[#F97316]/20 bg-[#F97316]/10 px-3 py-1.5 rounded-lg hover:bg-[#F97316]/20 transition-colors whitespace-nowrap">
@@ -263,7 +247,7 @@ export default function StarterPage() {
               <p className="text-[11px] font-medium text-[#F97316]/70 uppercase tracking-widest mb-2">Want to go deeper?</p>
               <h2 className="text-2xl font-bold text-white mb-3">Learn with the LP Army</h2>
               <p className="text-sm text-white/40 leading-relaxed mb-6">
-                From the basics of providing liquidity to advanced Meteora strategies — learn it all through the LP Army Academy. The biggest LP community in crypto.
+                From the basics of providing liquidity to advanced Meteora strategies. Learn it all through the LP Army Academy, the biggest LP community in crypto.
               </p>
               <a
                 href="https://lparmy.meteora.ag"
@@ -298,8 +282,6 @@ export default function StarterPage() {
 
         {/* ── Final CTA ── */}
         <div className="relative rounded-2xl overflow-hidden border border-white/10 p-10 text-center my-10">
-          {/* IMG: background — abstract graphic or gradient illustration */}
-          {/* Replace the div below with: <Image src="/cta-bg.png" fill alt="" className="object-cover opacity-20" /> */}
           <div className="absolute inset-0 bg-gradient-to-br from-[#F97316]/10 via-transparent to-transparent pointer-events-none" />
           <div className="relative z-10">
             <h2 className="text-2xl font-bold text-white mb-2">Ready to start?</h2>
