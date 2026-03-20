@@ -220,6 +220,18 @@ export default function StarterPage() {
 
 
 
+        {/* ── Final CTA ── */}
+        <div className="relative rounded-2xl overflow-hidden border border-white/10 p-10 text-center my-10">
+          <div className="absolute inset-0 bg-gradient-to-br from-[#F97316]/10 via-transparent to-transparent pointer-events-none" />
+          <div className="relative z-10">
+            <h2 className="text-2xl font-bold text-white mb-2">Ready to start?</h2>
+            <p className="text-sm text-white/30 mb-6">Takes 5 minutes. Guided the whole way.</p>
+            <button className="inline-flex items-center gap-2 bg-[#F97316] text-white text-[15px] font-bold px-10 py-3.5 rounded-xl hover:bg-[#ea6c0a] transition-colors">
+              Start guided setup <IconArrow />
+            </button>
+          </div>
+        </div>
+
         {/* ── DAMM v2 callout ── */}
         <div className="my-10 px-5 py-5 bg-white/[0.02] border border-white/10 rounded-xl">
           <div className="flex items-start justify-between gap-4">
@@ -279,18 +291,6 @@ export default function StarterPage() {
                 </div>
               ))}
             </div>
-          </div>
-        </div>
-
-        {/* ── Final CTA ── */}
-        <div className="relative rounded-2xl overflow-hidden border border-white/10 p-10 text-center my-10">
-          <div className="absolute inset-0 bg-gradient-to-br from-[#F97316]/10 via-transparent to-transparent pointer-events-none" />
-          <div className="relative z-10">
-            <h2 className="text-2xl font-bold text-white mb-2">Ready to start?</h2>
-            <p className="text-sm text-white/30 mb-6">Takes 5 minutes. Guided the whole way.</p>
-            <button className="inline-flex items-center gap-2 bg-[#F97316] text-white text-[15px] font-bold px-10 py-3.5 rounded-xl hover:bg-[#ea6c0a] transition-colors">
-              Start guided setup <IconArrow />
-            </button>
           </div>
         </div>
 
