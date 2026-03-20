@@ -234,36 +234,18 @@ export default function StarterPage() {
           </div>
         </div>
 
-        {/* ── Also on Meteora ── */}
-        <div className="my-10">
-          <p className="text-[11px] font-medium text-white/30 uppercase tracking-widest mb-4">Also on Meteora</p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            {/* DLMM */}
-            <div className="bg-white/[0.03] border-2 border-[#F97316]/30 rounded-2xl p-5">
-              <div className="flex items-center justify-between mb-2">
-                <span className="text-[11px] font-semibold px-2 py-0.5 rounded-full bg-[#F97316]/10 text-[#F97316] border border-[#F97316]/20">You are here</span>
-                <span className="text-[11px] text-white/30">Flagship</span>
-              </div>
-              <h3 className="text-sm font-bold text-white mb-1">DLMM</h3>
-              <p className="text-[13px] text-white/40 leading-relaxed">Dynamic liquidity market making. Best for active LPs who want precise range control and maximum fee capture.</p>
-            </div>
-            {/* DAMM v2 */}
-            <div className="bg-white/[0.03] border border-white/10 rounded-2xl p-5 opacity-75">
-              <div className="flex items-center justify-between mb-2">
-                <span className="text-[11px] font-semibold px-2 py-0.5 rounded-full bg-white/5 text-white/40 border border-white/10">Also available</span>
-                <span className="text-[11px] text-white/30">Simpler</span>
-              </div>
-              <h3 className="text-sm font-bold text-white mb-1">DAMM v2</h3>
-              <p className="text-[13px] text-white/40 leading-relaxed">A more hands-off approach suited for longer time horizons. No guided setup yet — watch a short video to see how it works.</p>
-              <button className="mt-3 inline-flex items-center gap-1.5 text-[12px] text-white/40 border border-white/10 px-3 py-1.5 rounded-lg hover:text-white hover:border-white/20 transition-colors">
-                <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-                  <circle cx="6" cy="6" r="5" stroke="currentColor" strokeWidth="1.2"/>
-                  <path d="M4.5 4l4 2-4 2V4z" fill="currentColor"/>
-                </svg>
-                Watch video
-              </button>
-            </div>
-          </div>
+        {/* ── DAMM v2 callout ── */}
+        <div className="flex items-center gap-2 my-10 px-5 py-4 bg-white/[0.02] border border-white/10 rounded-xl">
+          <p className="text-[13px] text-white/40 leading-relaxed">
+            This guide covers <span className="text-white font-medium">DLMM</span>, Meteora's flagship product. Curious about DAMM v2?{" "}
+            <a href="#" className="text-[#F97316] hover:underline inline-flex items-center gap-1">
+              Watch a short video
+              <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+                <circle cx="5" cy="5" r="4" stroke="currentColor" strokeWidth="1.2"/>
+                <path d="M3.5 3.5l3 1.5-3 1.5V3.5z" fill="currentColor"/>
+              </svg>
+            </a>
+          </p>
         </div>
 
         {/* ── LP Army / Academy ── */}
