@@ -50,7 +50,7 @@ function Nav() {
     <nav className="border-b border-white/10 bg-[#0C0E12]/80 backdrop-blur-md sticky top-0 z-10">
       <div className="max-w-4xl mx-auto px-5 h-14 flex items-center justify-between">
         <div className="flex items-center gap-6">
-          <Image src="/full-logo-on-dark.png" width={120} height={28} alt="Meteora" />
+          <Image src="/full-logo-on-dark.png" width={100} height={20} alt="Meteora" className="h-5 w-auto" />
           <div className="hidden sm:flex items-center gap-4 text-sm text-white/50">
             <a href="#" className="hover:text-white transition-colors">Pools</a>
             <a href="#" className="hover:text-white transition-colors">Portfolio</a>
