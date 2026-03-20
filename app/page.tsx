@@ -75,12 +75,12 @@ function Nav() {
 // ─── Section wrapper ──────────────────────────────────────────────────────────
 
 function Section({
-  label, title, subtitle, children, noBorder = false,
+  id, label, title, subtitle, children, noBorder = false,
 }: {
-  label: string; title: string; subtitle?: string; children?: React.ReactNode; noBorder?: boolean;
+  id?: string; label: string; title: string; subtitle?: string; children?: React.ReactNode; noBorder?: boolean;
 }) {
   return (
-    <section className={`py-10 ${noBorder ? "" : "border-b border-white/10"}`}>
+    <section id={id} className={`py-10 ${noBorder ? "" : "border-b border-white/10"}`}>
       <p className="text-[11px] font-medium text-[#F97316]/70 uppercase tracking-widest mb-1">{label}</p>
       <h2 className="text-xl font-semibold text-white mb-1">{title}</h2>
       {subtitle && <p className="text-[15px] text-white/50 leading-relaxed">{subtitle}</p>}
@@ -119,9 +119,9 @@ export default function StarterPage() {
             <button className="flex items-center justify-center gap-2 bg-[#F97316] text-white text-sm font-bold px-6 py-2.5 rounded-lg hover:bg-[#ea6c0a] transition-colors">
               Start guided setup <IconArrow />
             </button>
-            <button className="border border-white/20 text-white/70 text-sm font-medium px-6 py-2.5 rounded-lg hover:bg-white/5 hover:text-white transition-colors">
+            <a href="#basics" className="border border-white/20 text-white/70 text-sm font-medium px-6 py-2.5 rounded-lg hover:bg-white/5 hover:text-white transition-colors">
               Learn LP basics
-            </button>
+            </a>
           </div>
         </div>
 
@@ -133,7 +133,7 @@ export default function StarterPage() {
         />
 
         {/* ── The basics ── */}
-        <Section label="The basics" title="Three things to know before you start">
+        <Section id="basics" label="The basics" title="Three things to know before you start">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mt-6">
             <div className="bg-white/[0.03] border border-white/10 rounded-xl p-5 hover:border-[#F97316]/30 transition-colors">
               <div className="w-8 h-8 rounded-lg bg-[#F97316]/10 flex items-center justify-center mb-3">
