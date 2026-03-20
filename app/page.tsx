@@ -1,12 +1,9 @@
 // app/starter/page.tsx
-// Requires: Tailwind CSS (already configured in Next.js project)
-// Deploy: push to repo connected to Vercel — zero config needed
-
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Get Started — Meteora",
-  description: "Your first LP position, made simple. Learn the basics and start a guided setup flow.",
+  description: "Your first LP position, made simple.",
 };
 
 // ─── Icons ────────────────────────────────────────────────────────────────────
@@ -14,8 +11,8 @@ export const metadata: Metadata = {
 function IconClock() {
   return (
     <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-      <circle cx="8" cy="8" r="6" stroke="#0F6E56" strokeWidth="1.5" />
-      <path d="M8 5v3l2 1.5" stroke="#0F6E56" strokeWidth="1.5" strokeLinecap="round" />
+      <circle cx="8" cy="8" r="6" stroke="#57E5B1" strokeWidth="1.5" />
+      <path d="M8 5v3l2 1.5" stroke="#57E5B1" strokeWidth="1.5" strokeLinecap="round" />
     </svg>
   );
 }
@@ -23,7 +20,7 @@ function IconClock() {
 function IconChart() {
   return (
     <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-      <path d="M3 12L6 8l3 3 4-6" stroke="#534AB7" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M3 12L6 8l3 3 4-6" stroke="#57E5B1" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
 }
@@ -31,8 +28,8 @@ function IconChart() {
 function IconAlert() {
   return (
     <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-      <path d="M8 3v5m0 3v.5" stroke="#854F0B" strokeWidth="1.5" strokeLinecap="round" />
-      <circle cx="8" cy="8" r="6" stroke="#854F0B" strokeWidth="1.5" />
+      <path d="M8 3v5m0 3v.5" stroke="#F59E0B" strokeWidth="1.5" strokeLinecap="round" />
+      <circle cx="8" cy="8" r="6" stroke="#F59E0B" strokeWidth="1.5" />
     </svg>
   );
 }
@@ -40,7 +37,15 @@ function IconAlert() {
 function IconCheck() {
   return (
     <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
-      <path d="M2 5l2.5 2.5L8 3" stroke="#0F6E56" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M2 5l2.5 2.5L8 3" stroke="#57E5B1" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+function IconArrow() {
+  return (
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+      <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
 }
@@ -49,17 +54,19 @@ function IconCheck() {
 
 function Nav() {
   return (
-    <nav className="border-b border-gray-100 bg-white sticky top-0 z-10">
+    <nav className="border-b border-white/10 bg-[#0C0E12]/80 backdrop-blur-md sticky top-0 z-10">
       <div className="max-w-3xl mx-auto px-5 h-14 flex items-center justify-between">
         <div className="flex items-center gap-6">
-          <span className="font-medium text-gray-900 text-sm tracking-tight">Meteora</span>
-          <div className="hidden sm:flex items-center gap-4 text-sm text-gray-500">
-            <a href="#" className="hover:text-gray-900 transition-colors">Pools</a>
-            <a href="#" className="hover:text-gray-900 transition-colors">Portfolio</a>
-            <a href="/starter" className="text-gray-900 font-medium">Get started</a>
+          <span className="font-bold text-white text-sm tracking-tight">
+            ☄️ meteora
+          </span>
+          <div className="hidden sm:flex items-center gap-4 text-sm text-white/50">
+            <a href="#" className="hover:text-white transition-colors">Pools</a>
+            <a href="#" className="hover:text-white transition-colors">Portfolio</a>
+            <a href="/starter" className="text-[#57E5B1] font-medium">Get started</a>
           </div>
         </div>
-        <button className="text-sm bg-gray-900 text-white px-4 py-1.5 rounded-lg font-medium hover:bg-gray-700 transition-colors">
+        <button className="text-sm bg-[#57E5B1] text-[#0C0E12] px-4 py-1.5 rounded-lg font-semibold hover:bg-[#3ecf9e] transition-colors">
           Launch app
         </button>
       </div>
@@ -83,10 +90,10 @@ function Section({
   noBorder?: boolean;
 }) {
   return (
-    <section className={`py-10 ${noBorder ? "" : "border-b border-gray-100"}`}>
-      <p className="text-[11px] font-medium text-gray-400 uppercase tracking-widest mb-1">{label}</p>
-      <h2 className="text-xl font-medium text-gray-900 mb-1">{title}</h2>
-      {subtitle && <p className="text-[15px] text-gray-500 leading-relaxed mb-0">{subtitle}</p>}
+    <section className={`py-10 ${noBorder ? "" : "border-b border-white/10"}`}>
+      <p className="text-[11px] font-medium text-[#57E5B1]/70 uppercase tracking-widest mb-1">{label}</p>
+      <h2 className="text-xl font-semibold text-white mb-1">{title}</h2>
+      {subtitle && <p className="text-[15px] text-white/50 leading-relaxed">{subtitle}</p>}
       {children}
     </section>
   );
@@ -96,27 +103,33 @@ function Section({
 
 export default function StarterPage() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-[#0C0E12] text-white">
+
+      {/* Background grid effect */}
+      <div className="fixed inset-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none" />
+      {/* Glow */}
+      <div className="fixed top-[-200px] left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-[#57E5B1]/10 rounded-full blur-[120px] pointer-events-none" />
+
       <Nav />
 
-      <main className="max-w-3xl mx-auto px-5 pb-20">
+      <main className="relative max-w-3xl mx-auto px-5 pb-20">
 
         {/* ── Hero ── */}
-        <div className="text-center py-16 border-b border-gray-100">
-          <span className="inline-block text-[11px] font-medium px-3 py-1 rounded-full bg-blue-50 text-blue-600 mb-4 tracking-wide">
+        <div className="text-center py-20 border-b border-white/10">
+          <span className="inline-block text-[11px] font-medium px-3 py-1 rounded-full bg-[#57E5B1]/10 text-[#57E5B1] mb-5 tracking-wide border border-[#57E5B1]/20">
             New to liquidity providing?
           </span>
-          <h1 className="text-3xl sm:text-4xl font-medium text-gray-900 leading-tight mb-4">
+          <h1 className="text-3xl sm:text-4xl font-bold text-white leading-tight mb-4">
             Your first LP position,<br className="hidden sm:block" /> made simple.
           </h1>
-          <p className="text-base text-gray-500 leading-relaxed max-w-md mx-auto mb-8">
+          <p className="text-base text-white/50 leading-relaxed max-w-md mx-auto mb-8">
             LPing can feel overwhelming at first. This page gives you just enough to get started — then walks you through the rest.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <button className="bg-gray-900 text-white text-sm font-medium px-6 py-2.5 rounded-lg hover:bg-gray-700 transition-colors">
-              Start guided setup →
+            <button className="flex items-center justify-center gap-2 bg-[#57E5B1] text-[#0C0E12] text-sm font-bold px-6 py-2.5 rounded-lg hover:bg-[#3ecf9e] transition-colors">
+              Start guided setup <IconArrow />
             </button>
-            <button className="border border-gray-200 text-gray-700 text-sm font-medium px-6 py-2.5 rounded-lg hover:bg-gray-50 transition-colors">
+            <button className="border border-white/20 text-white/70 text-sm font-medium px-6 py-2.5 rounded-lg hover:bg-white/5 hover:text-white transition-colors">
               Learn LP basics
             </button>
           </div>
@@ -132,41 +145,38 @@ export default function StarterPage() {
         {/* ── The basics ── */}
         <Section label="The basics" title="Three things to know before you start">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mt-6">
-            {/* Card 1 */}
-            <div className="bg-white border border-gray-100 rounded-xl p-5">
-              <div className="w-8 h-8 rounded-lg bg-emerald-50 flex items-center justify-center mb-3">
+            <div className="bg-white/[0.03] border border-white/10 rounded-xl p-5 hover:border-[#57E5B1]/30 transition-colors">
+              <div className="w-8 h-8 rounded-lg bg-[#57E5B1]/10 flex items-center justify-center mb-3">
                 <IconClock />
               </div>
-              <h3 className="text-sm font-medium text-gray-900 mb-1.5">What is LPing?</h3>
-              <p className="text-[13px] text-gray-500 leading-relaxed">
+              <h3 className="text-sm font-semibold text-white mb-1.5">What is LPing?</h3>
+              <p className="text-[13px] text-white/50 leading-relaxed">
                 You deposit two tokens into a pool. Traders use your liquidity to swap. In return, you earn a share of the fees from every trade.
               </p>
             </div>
 
-            {/* Card 2 */}
-            <div className="bg-white border border-gray-100 rounded-xl p-5">
-              <div className="w-8 h-8 rounded-lg bg-violet-50 flex items-center justify-center mb-3">
+            <div className="bg-white/[0.03] border border-white/10 rounded-xl p-5 hover:border-[#57E5B1]/30 transition-colors">
+              <div className="w-8 h-8 rounded-lg bg-[#57E5B1]/10 flex items-center justify-center mb-3">
                 <IconChart />
               </div>
-              <h3 className="text-sm font-medium text-gray-900 mb-1.5">How do you earn fees?</h3>
-              <p className="text-[13px] text-gray-500 leading-relaxed">
+              <h3 className="text-sm font-semibold text-white mb-1.5">How do you earn fees?</h3>
+              <p className="text-[13px] text-white/50 leading-relaxed">
                 Every time someone trades in your pool, a small fee is charged. LPs split that fee proportionally based on how much liquidity they've provided.
               </p>
-              <span className="inline-block mt-2.5 text-[11px] px-2 py-0.5 rounded-full bg-blue-50 text-blue-600">
+              <span className="inline-block mt-2.5 text-[11px] px-2 py-0.5 rounded-full bg-[#57E5B1]/10 text-[#57E5B1] border border-[#57E5B1]/20">
                 Passive income while you hold
               </span>
             </div>
 
-            {/* Card 3 */}
-            <div className="bg-white border border-gray-100 rounded-xl p-5">
-              <div className="w-8 h-8 rounded-lg bg-amber-50 flex items-center justify-center mb-3">
+            <div className="bg-white/[0.03] border border-white/10 rounded-xl p-5 hover:border-amber-500/30 transition-colors">
+              <div className="w-8 h-8 rounded-lg bg-amber-500/10 flex items-center justify-center mb-3">
                 <IconAlert />
               </div>
-              <h3 className="text-sm font-medium text-gray-900 mb-1.5">The key risk</h3>
-              <p className="text-[13px] text-gray-500 leading-relaxed">
+              <h3 className="text-sm font-semibold text-white mb-1.5">The key risk</h3>
+              <p className="text-[13px] text-white/50 leading-relaxed">
                 Your position has a price range. If price moves outside it, you stop earning fees until price returns or you rebalance.
               </p>
-              <span className="inline-block mt-2.5 text-[11px] px-2 py-0.5 rounded-full bg-amber-50 text-amber-700">
+              <span className="inline-block mt-2.5 text-[11px] px-2 py-0.5 rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/20">
                 Going out of range = no fees
               </span>
             </div>
@@ -179,13 +189,13 @@ export default function StarterPage() {
           title="A beginner-friendly default"
           subtitle="You don't need to find the perfect setup. A simple starting point goes a long way."
         >
-          <div className="mt-5 flex flex-col sm:flex-row items-start gap-4 bg-gray-50 border border-gray-100 rounded-xl p-5">
-            <span className="shrink-0 text-[11px] font-medium px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-700">
+          <div className="mt-5 flex flex-col sm:flex-row items-start gap-4 bg-[#57E5B1]/5 border border-[#57E5B1]/20 rounded-xl p-5">
+            <span className="shrink-0 text-[11px] font-semibold px-2.5 py-1 rounded-full bg-[#57E5B1]/10 text-[#57E5B1] border border-[#57E5B1]/20">
               Recommended
             </span>
             <div>
-              <h3 className="text-sm font-medium text-gray-900 mb-1">Start with a well-known pair and a wider range</h3>
-              <p className="text-[13px] text-gray-500 leading-relaxed">
+              <h3 className="text-sm font-semibold text-white mb-1">Start with a well-known pair and a wider range</h3>
+              <p className="text-[13px] text-white/50 leading-relaxed">
                 Pairs like SOL/USDC are widely traded, meaning more fee opportunities. A wider price range means you stay in range longer — fewer surprises while you're learning how it works.
               </p>
             </div>
@@ -206,18 +216,18 @@ export default function StarterPage() {
               { n: 4, title: "Review your deposit", desc: "confirm amounts before committing" },
               { n: 5, title: "Create your first position", desc: "you're in" },
             ].map((s) => (
-              <div key={s.n} className="flex items-center gap-3 bg-white border border-gray-100 rounded-lg px-4 py-3">
-                <span className="shrink-0 w-6 h-6 rounded-full bg-gray-900 text-white text-[11px] font-medium flex items-center justify-center">
+              <div key={s.n} className="flex items-center gap-3 bg-white/[0.03] border border-white/10 rounded-lg px-4 py-3 hover:border-white/20 transition-colors">
+                <span className="shrink-0 w-6 h-6 rounded-full bg-[#57E5B1]/10 text-[#57E5B1] text-[11px] font-bold flex items-center justify-center border border-[#57E5B1]/20">
                   {s.n}
                 </span>
-                <p className="text-[13px] text-gray-500">
-                  <span className="font-medium text-gray-900">{s.title}</span> — {s.desc}
+                <p className="text-[13px] text-white/50">
+                  <span className="font-medium text-white">{s.title}</span> — {s.desc}
                 </p>
               </div>
             ))}
           </div>
-          <button className="mt-5 w-full bg-gray-900 text-white text-sm font-medium py-3 rounded-lg hover:bg-gray-700 transition-colors">
-            Start guided setup →
+          <button className="mt-5 w-full flex items-center justify-center gap-2 bg-[#57E5B1] text-[#0C0E12] text-sm font-bold py-3 rounded-lg hover:bg-[#3ecf9e] transition-colors">
+            Start guided setup <IconArrow />
           </button>
         </Section>
 
@@ -229,17 +239,17 @@ export default function StarterPage() {
         >
           <div className="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-3">
             {[
-              { dot: "bg-emerald-500", title: "Position in range?", desc: "If price moves out of your range, you stop earning. Check back and rebalance when needed." },
-              { dot: "bg-blue-500", title: "Fees earned", desc: "Track how much you've earned from trading fees since you deposited." },
+              { dot: "bg-[#57E5B1]", title: "Position in range?", desc: "If price moves out of your range, you stop earning. Check back and rebalance when needed." },
+              { dot: "bg-blue-400", title: "Fees earned", desc: "Track how much you've earned from trading fees since you deposited." },
               { dot: "bg-amber-400", title: "Overall PnL", desc: "Your net position including fees earned and any change in token value." },
               { dot: "bg-orange-500", title: "Hold, rebalance, or withdraw?", desc: "There's no universal rule — it depends on your range, fees, and where price is heading." },
             ].map((m) => (
-              <div key={m.title} className="bg-white border border-gray-100 rounded-xl p-4">
+              <div key={m.title} className="bg-white/[0.03] border border-white/10 rounded-xl p-4 hover:border-white/20 transition-colors">
                 <div className="flex items-center gap-2 mb-1.5">
                   <span className={`w-2 h-2 rounded-full shrink-0 ${m.dot}`} />
-                  <h4 className="text-[13px] font-medium text-gray-900">{m.title}</h4>
+                  <h4 className="text-[13px] font-semibold text-white">{m.title}</h4>
                 </div>
-                <p className="text-[12px] text-gray-500 leading-relaxed">{m.desc}</p>
+                <p className="text-[12px] text-white/50 leading-relaxed">{m.desc}</p>
               </div>
             ))}
           </div>
@@ -247,7 +257,7 @@ export default function StarterPage() {
 
         {/* ── Checklist ── */}
         <Section label="Before you go" title="A quick checklist for beginners" noBorder>
-          <div className="mt-5 bg-gray-50 rounded-xl p-6 flex flex-col gap-4">
+          <div className="mt-5 bg-white/[0.03] border border-white/10 rounded-xl p-6 flex flex-col gap-4">
             {[
               { bold: "Start small.", rest: "You don't need to go big to learn how it works." },
               { bold: "Use tokens you recognize.", rest: "Familiar pairs are easier to monitor and understand." },
@@ -256,11 +266,11 @@ export default function StarterPage() {
               { bold: "You don't need to get it perfect.", rest: "Your first position is how you learn." },
             ].map((item) => (
               <div key={item.bold} className="flex items-start gap-3">
-                <span className="shrink-0 w-[18px] h-[18px] rounded-full bg-emerald-50 flex items-center justify-center mt-0.5">
+                <span className="shrink-0 w-[18px] h-[18px] rounded-full bg-[#57E5B1]/10 border border-[#57E5B1]/20 flex items-center justify-center mt-0.5">
                   <IconCheck />
                 </span>
-                <p className="text-[13px] text-gray-500 leading-relaxed">
-                  <span className="font-medium text-gray-900">{item.bold}</span> {item.rest}
+                <p className="text-[13px] text-white/50 leading-relaxed">
+                  <span className="font-semibold text-white">{item.bold}</span> {item.rest}
                 </p>
               </div>
             ))}
@@ -269,10 +279,10 @@ export default function StarterPage() {
 
         {/* ── Final CTA ── */}
         <div className="text-center pt-10">
-          <button className="bg-gray-900 text-white text-[15px] font-medium px-8 py-3 rounded-lg hover:bg-gray-700 transition-colors">
-            Start guided setup →
+          <button className="inline-flex items-center gap-2 bg-[#57E5B1] text-[#0C0E12] text-[15px] font-bold px-8 py-3 rounded-lg hover:bg-[#3ecf9e] transition-colors">
+            Start guided setup <IconArrow />
           </button>
-          <p className="text-sm text-gray-400 mt-3">Takes about 5 minutes. Step-by-step guidance the whole way.</p>
+          <p className="text-sm text-white/30 mt-3">Takes about 5 minutes. Step-by-step guidance the whole way.</p>
         </div>
 
       </main>
