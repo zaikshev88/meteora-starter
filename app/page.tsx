@@ -113,12 +113,34 @@ export default function StarterPage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
             {[
-              { num: "01", title: "Deposit & earn", body: "Add two tokens to a pool. Every trade earns you a fee automatically.", tag: null, tagStyle: "" },
-              { num: "02", title: "Fees are automatic", body: "You earn passively. Fees accumulate as trades happen — no action needed.", tag: "Passive income", tagStyle: "bg-[#F97316]/10 text-[#F97316] border-[#F97316]/20" },
-              { num: "03", title: "Watch your range", body: "If price leaves your range, fees pause. Stay in range to keep earning.", tag: "⚠ Key risk", tagStyle: "bg-yellow-500/10 text-yellow-400 border-yellow-500/20" },
+              { icon: "deposit", title: "Deposit & earn", body: "Add two tokens to a pool. Every trade earns you a fee automatically.", tag: null, tagStyle: "" },
+              { icon: "fees", title: "Fees are automatic", body: "You earn passively. Fees accumulate as trades happen — no action needed.", tag: "Passive income", tagStyle: "bg-[#F97316]/10 text-[#F97316] border-[#F97316]/20" },
+              { icon: "range", title: "Watch your range", body: "If price leaves your range, fees pause. Stay in range to keep earning.", tag: "⚠ Key risk", tagStyle: "bg-yellow-500/10 text-yellow-400 border-yellow-500/20" },
             ].map((c) => (
-              <div key={c.num} className="bg-white/[0.03] border border-white/10 rounded-2xl p-6 hover:border-[#F97316]/20 transition-colors">
-                <p className="text-3xl font-bold text-white/10 mb-4">{c.num}</p>
+              <div key={c.icon} className="bg-white/[0.03] border border-white/10 rounded-2xl p-6 hover:border-[#F97316]/20 transition-colors">
+                <div className="w-12 h-12 rounded-xl bg-[#F97316]/10 border border-[#F97316]/10 flex items-center justify-center mb-5">
+                  {c.icon === "deposit" && (
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                      <circle cx="12" cy="12" r="9" stroke="#F97316" strokeWidth="1.5"/>
+                      <path d="M12 8v8M9 13l3 3 3-3" stroke="#F97316" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M8 8h8" stroke="#F97316" strokeWidth="1.5" strokeLinecap="round" opacity="0.4"/>
+                    </svg>
+                  )}
+                  {c.icon === "fees" && (
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                      <path d="M3 17l4-5 4 3 4-6 4 4" stroke="#F97316" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M3 12V7a1 1 0 011-1h16a1 1 0 011 1v10a1 1 0 01-1 1H4a1 1 0 01-1-1v-2" stroke="#F97316" strokeWidth="1.5" strokeLinecap="round" opacity="0.4"/>
+                    </svg>
+                  )}
+                  {c.icon === "range" && (
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                      <rect x="3" y="10" width="18" height="4" rx="2" fill="#F97316" fillOpacity="0.15" stroke="#F97316" strokeWidth="1.5" strokeOpacity="0.4"/>
+                      <path d="M12 3v4M12 17v4" stroke="#F97316" strokeWidth="1.5" strokeLinecap="round" opacity="0.4"/>
+                      <circle cx="12" cy="12" r="2.5" fill="#F97316"/>
+                      <path d="M7 12H3M21 12h-4" stroke="#F97316" strokeWidth="1.5" strokeLinecap="round" opacity="0.4"/>
+                    </svg>
+                  )}
+                </div>
                 <h3 className="text-sm font-semibold text-white mb-2">{c.title}</h3>
                 <p className="text-[13px] text-white/40 leading-relaxed mb-3">{c.body}</p>
                 {c.tag && (
