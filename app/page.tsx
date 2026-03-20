@@ -235,17 +235,24 @@ export default function StarterPage() {
         </div>
 
         {/* ── DAMM v2 callout ── */}
-        <div className="flex items-center gap-2 my-10 px-5 py-4 bg-white/[0.02] border border-white/10 rounded-xl">
-          <p className="text-[13px] text-white/40 leading-relaxed">
-            This guide covers <span className="text-white font-medium">DLMM</span>, Meteora's flagship product. Curious about DAMM v2?{" "}
-            <a href="#" className="text-[#F97316] hover:underline inline-flex items-center gap-1">
-              Watch a short video
-              <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
-                <circle cx="5" cy="5" r="4" stroke="currentColor" strokeWidth="1.2"/>
-                <path d="M3.5 3.5l3 1.5-3 1.5V3.5z" fill="currentColor"/>
+        <div className="my-10 px-5 py-5 bg-white/[0.02] border border-white/10 rounded-xl">
+          <div className="flex items-start justify-between gap-4">
+            <div>
+              <p className="text-[13px] text-white/40 mb-1">
+                This guide covers <span className="text-white font-medium">DLMM</span>, Meteora's flagship product.
+              </p>
+              <p className="text-[13px] text-white/40 leading-relaxed">
+                <span className="text-white font-medium">DAMM v2</span> is also available — a more hands-off, set-and-forget pool type suited for longer time horizons. No guided setup yet, but you can get a feel for it below.
+              </p>
+            </div>
+            <a href="#" className="shrink-0 inline-flex items-center gap-1.5 text-[12px] text-[#F97316] border border-[#F97316]/20 bg-[#F97316]/10 px-3 py-1.5 rounded-lg hover:bg-[#F97316]/20 transition-colors whitespace-nowrap">
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                <circle cx="6" cy="6" r="5" stroke="currentColor" strokeWidth="1.2"/>
+                <path d="M4.5 4l4 2-4 2V4z" fill="currentColor"/>
               </svg>
+              Watch video
             </a>
-          </p>
+          </div>
         </div>
 
         {/* ── LP Army / Academy ── */}
