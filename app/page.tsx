@@ -165,7 +165,7 @@ export default function StarterPage() {
               <h2 className="text-2xl font-bold text-white mb-1">We walk you through it.</h2>
               <p className="text-sm text-white/40 mb-8">Inside the terminal, a tour takes you from zero to your first position.</p>
               <div className="flex flex-col gap-3 mb-8">
-                {["Choose pool", "Read pool info", "Set range", "Review deposit", "Create position"].map((s, i) => (
+                {["Read pool info", "Set range", "Review deposit", "Create position"].map((s, i) => (
                   <div key={s} className="flex items-center gap-3">
                     <span className="shrink-0 w-7 h-7 rounded-full bg-[#F97316]/10 text-[#F97316] text-[11px] font-bold flex items-center justify-center border border-[#F97316]/20">
                       {i + 1}
