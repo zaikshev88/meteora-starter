@@ -105,19 +105,7 @@ export default function StarterPage() {
           </div>
         </div>
 
-        {/* ── Stats bar ── */}
-        <div className="grid grid-cols-3 gap-px bg-white/10 border border-white/10 rounded-2xl overflow-hidden my-12">
-          {[
-            { value: "5 min", label: "to your first position" },
-            { value: "Step-by-step", label: "guided setup tour" },
-            { value: "Anytime", label: "withdraw on your terms" },
-          ].map((s) => (
-            <div key={s.label} className="bg-[#0C0E12] px-6 py-8 text-center">
-              <p className="text-xl sm:text-2xl font-bold text-[#F97316] mb-1">{s.value}</p>
-              <p className="text-xs text-white/40">{s.label}</p>
-            </div>
-          ))}
-        </div>
+
 
         {/* ── Basics ── */}
         <div id="basics" className="py-4 mb-4">
