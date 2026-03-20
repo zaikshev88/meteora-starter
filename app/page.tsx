@@ -234,6 +234,31 @@ export default function StarterPage() {
           </div>
         </div>
 
+        {/* ── Also on Meteora ── */}
+        <div className="my-10">
+          <p className="text-[11px] font-medium text-white/30 uppercase tracking-widest mb-4">Also on Meteora</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            {/* DLMM */}
+            <div className="bg-white/[0.03] border-2 border-[#F97316]/30 rounded-2xl p-5">
+              <div className="flex items-center justify-between mb-2">
+                <span className="text-[11px] font-semibold px-2 py-0.5 rounded-full bg-[#F97316]/10 text-[#F97316] border border-[#F97316]/20">You are here</span>
+                <span className="text-[11px] text-white/30">Flagship</span>
+              </div>
+              <h3 className="text-sm font-bold text-white mb-1">DLMM</h3>
+              <p className="text-[13px] text-white/40 leading-relaxed">Dynamic liquidity market making. Best for active LPs who want precise range control and maximum fee capture.</p>
+            </div>
+            {/* DAMM v2 */}
+            <div className="bg-white/[0.03] border border-white/10 rounded-2xl p-5 hover:border-white/20 transition-colors">
+              <div className="flex items-center justify-between mb-2">
+                <span className="text-[11px] font-semibold px-2 py-0.5 rounded-full bg-white/5 text-white/40 border border-white/10">Explore next</span>
+                <span className="text-[11px] text-white/30">Simpler</span>
+              </div>
+              <h3 className="text-sm font-bold text-white mb-1">DAMM v2</h3>
+              <p className="text-[13px] text-white/40 leading-relaxed">Dynamic automated market making. A more hands-off approach suited for longer time horizons once you're comfortable with LPing.</p>
+            </div>
+          </div>
+        </div>
+
         {/* ── LP Army / Academy ── */}
         <div className="relative rounded-2xl overflow-hidden border border-white/10 my-10">
           <div className="absolute inset-0 bg-gradient-to-br from-purple-900/30 via-transparent to-[#F97316]/10 pointer-events-none" />
