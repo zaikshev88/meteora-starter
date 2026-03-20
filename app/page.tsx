@@ -82,8 +82,8 @@ export default function StarterPage() {
             New to LPing?
           </span>
           <h1 className="text-4xl sm:text-6xl font-bold text-white leading-[1.1] tracking-tight mb-5">
-            Earn fees.<br />
-            <span className="text-[#F97316]">Not confusion.</span>
+            Your first LP position,<br />
+            <span className="text-[#F97316]">made simple.</span>
           </h1>
           <p className="text-lg text-white/40 max-w-sm mx-auto mb-10 leading-relaxed">
             Set up your first liquidity position in minutes — guided, step by step.
