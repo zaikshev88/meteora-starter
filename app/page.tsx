@@ -234,6 +234,47 @@ export default function StarterPage() {
           </div>
         </div>
 
+        {/* ── LP Army / Academy ── */}
+        <div className="relative rounded-2xl overflow-hidden border border-white/10 my-10">
+          <div className="absolute inset-0 bg-gradient-to-br from-purple-900/30 via-transparent to-[#F97316]/10 pointer-events-none" />
+          <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 gap-0">
+            <div className="p-8 flex flex-col justify-center">
+              <p className="text-[11px] font-medium text-[#F97316]/70 uppercase tracking-widest mb-2">Want to go deeper?</p>
+              <h2 className="text-2xl font-bold text-white mb-3">Learn with the LP Army</h2>
+              <p className="text-sm text-white/40 leading-relaxed mb-6">
+                From the basics of providing liquidity to advanced Meteora strategies — learn it all through the LP Army Academy. The biggest LP community in crypto.
+              </p>
+              <a
+                href="https://lparmy.meteora.ag"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-[#F97316] text-white text-sm font-bold px-6 py-2.5 rounded-lg hover:bg-[#ea6c0a] transition-colors w-fit"
+              >
+                Go to LP Academy
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                  <path d="M2 10L10 2M10 2H5M10 2v5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </a>
+            </div>
+            <div className="p-6 flex flex-col gap-3 border-t sm:border-t-0 sm:border-l border-white/10">
+              <p className="text-[11px] font-medium text-white/30 uppercase tracking-widest mb-1">What you'll learn</p>
+              {[
+                { duration: "1–2 hrs", label: "Start with Fundamentals", sublabel: "Zero to Hero in LP" },
+                { duration: "2–3 hrs", label: "Advanced LP Strategies", sublabel: "Ranges, rebalancing, risk" },
+                { duration: "1 hr", label: "Meteora-specific Tools", sublabel: "DLMM, vaults, DAMM" },
+              ].map((item) => (
+                <div key={item.label} className="flex items-start gap-3 bg-white/[0.03] border border-white/10 rounded-xl px-4 py-3">
+                  <span className="text-[11px] text-white/30 mt-0.5 shrink-0 w-12">{item.duration}</span>
+                  <div>
+                    <p className="text-[13px] font-medium text-white">{item.label}</p>
+                    <p className="text-[11px] text-white/40">{item.sublabel}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
         {/* ── Final CTA ── */}
         <div className="relative rounded-2xl overflow-hidden border border-white/10 p-10 text-center my-10">
           {/* IMG: background — abstract graphic or gradient illustration */}
