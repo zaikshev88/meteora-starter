@@ -74,11 +74,23 @@ export default function StarterPage() {
             LP is the<br />
             <span className="text-[#F97316]">New Trading</span>
           </h1>
+          {/* IMG: hero video thumbnail or terminal screenshot */}
+          {/* Replace with: <Image src="/hero-video-thumb.png" ... /> */}
+          <div className="relative w-full aspect-video rounded-2xl border border-white/10 bg-white/[0.02] flex items-center justify-center mb-10">
+            <div className="w-14 h-14 rounded-full bg-[#F97316]/10 border border-[#F97316]/20 flex items-center justify-center">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M7 5l9 5-9 5V5z" fill="#F97316"/>
+              </svg>
+            </div>
+            <p className="absolute bottom-5 left-0 right-0 text-center text-[12px] text-white/30">
+              Watch this quick intro to see why more traders are starting with LPs on Meteora.
+            </p>
+          </div>
           <p className="text-lg text-white/50 max-w-lg mx-auto mb-3 leading-relaxed">
             If you already trade, LPs give you another way to stay in the market and earn fees without needing to master everything on day one.
           </p>
           <p className="text-sm text-white/30 mb-10">Your first LP, made simple.</p>
-          <div className="flex flex-col sm:flex-row gap-3 justify-center mb-16">
+          <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <button className="flex items-center justify-center gap-2 bg-[#F97316] text-white text-sm font-bold px-8 py-3 rounded-lg hover:bg-[#ea6c0a] transition-colors">
               Create your first LP <IconArrow />
             </button>
@@ -89,18 +101,6 @@ export default function StarterPage() {
               </svg>
               Watch the 3 minute intro
             </button>
-          </div>
-          {/* IMG: hero video thumbnail or terminal screenshot */}
-          {/* Replace with: <Image src="/hero-video-thumb.png" ... /> */}
-          <div className="relative w-full aspect-video rounded-2xl border border-white/10 bg-white/[0.02] flex items-center justify-center">
-            <div className="w-14 h-14 rounded-full bg-[#F97316]/10 border border-[#F97316]/20 flex items-center justify-center">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                <path d="M7 5l9 5-9 5V5z" fill="#F97316"/>
-              </svg>
-            </div>
-            <p className="absolute bottom-5 left-0 right-0 text-center text-[12px] text-white/30">
-              Watch this quick intro to see why more traders are starting with LPs on Meteora.
-            </p>
           </div>
         </div>
 
